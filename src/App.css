@@ -32,3 +32,80 @@ nav a {
     flex-basis: 50%;
   }
 }
+
+/* Dish */
+.dish-item {
+  border-bottom: 1px solid #9d9d9d;
+  padding-bottom: 20px;
+  margin: 20px 0;
+}
+.dish-item img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+/*Desktop*/
+@media screen and (min-width: 767px) {
+  .dish-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .dish-item {
+    width: 32%;
+  }
+}
+
+/* Reserve */
+
+.reserve-table-section {
+  background-image: url("./assets/img/table.jpg");
+  text-align: center;
+  padding: 50px 20px;
+  background-position: 100% 80%;
+  position: relative;
+}
+
+.reserve-table-section:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.7);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+.reserve-table-section h2 {
+  font-size: 4em;
+  color: white;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.reserve-table-section .main-btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+.main-btn {
+  padding: 10px 50px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 20px;
+  background-color: #495E57;
+  font-weight: 300;
+  transition: .4s all ease;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.main-btn:hover {
+  background-color: #6a827a;
+}

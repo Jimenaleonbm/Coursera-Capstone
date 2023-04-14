@@ -1,5 +1,5 @@
 import DishItem from "./DishItem"
-
+import { Link } from "react-router-dom"
 export default function HomePage(){
     const specials = [
         {
@@ -38,34 +38,30 @@ export default function HomePage(){
     ]
     return (
         <>
+            <section className="reserve-table-section">
+                <h2>Reserve a Table</h2>
+                <Link to="/booking" className="main-btn">Book Now</Link>
+            </section>
             <section>
-                    <h2>Fruit Cake</h2>
-                    <button>Order Now</button>
-                </section>
-                <section>
-                    <h2>Specials</h2>
-                    <div>
-                        {
-                            specials.map((i, index) => {
-                                return(<DishItem key={i.title + index} img={i.img} title={i.title} description={i.description} />)
-                            })
-                        }
-                    </div>
-                </section>
-                <section>
-                    <h2>Reserve a Table</h2>
-                    <button>Book Now</button>
-                </section>
-                <section>
-                    <h2>Menu</h2>
-                    <div>
-                        {
-                            menu.map((i, index) => {
-                                return(<DishItem key={i.title + index} img={i.img} title={i.title} description={i.description} />)
-                            })
-                        }
-                    </div>
-                </section>
-            </>
+                <h2>Specials</h2>
+                <div className="dish-container">
+                    {
+                        specials.map((i, index) => {
+                            return(<DishItem key={i.title + index} img={i.img} title={i.title} description={i.description} />)
+                        })
+                    }
+                </div>
+            </section>
+            <section>
+                <h2>Menu</h2>
+                <div className="dish-container">
+                    {
+                        menu.map((i, index) => {
+                            return(<DishItem key={i.title + index} img={i.img} title={i.title} description={i.description} />)
+                        })
+                    }
+                </div>
+            </section>
+        </>
     )
 }
