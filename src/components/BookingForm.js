@@ -29,12 +29,12 @@ export default function BookingForm(){
             <form onSubmit={submitForm}>
                 <label htmlFor="res-date">
                     Date:
-                    <input type="date" id="res-date" value={date} onChange={(e) => updateTimes(e.target.value)}  />
+                    <input required type="date" id="res-date" value={date} onChange={(e) => updateTimes(e.target.value)}  />
                 </label>
 
                 <label htmlFor="res-time">
                     Time:
-                    <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)}>
+                    <select required id="res-time" value={time} onChange={(e) => setTime(e.target.value)}>
                         {initialTimes.map((i, index) => {
                             return <option key={'time' + index}>{i}</option>
                         })}
@@ -43,19 +43,19 @@ export default function BookingForm(){
 
                 <label htmlFor="guests">
                     Number of guests:
-                    <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)} />
+                    <input required type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)} />
                 </label>
 
                 <label htmlFor="occasion">
                     Occasion:
-                    <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+                    <select required id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </select>
                 </label>
 
 
-                <button type="submit" className="main-btn">Submit</button>
+                <button type="submit" className="main-btn" aria-label="On Click">Submit</button>
 
                 {/* <br />
                 date: {date} <br />
